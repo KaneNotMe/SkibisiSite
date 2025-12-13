@@ -1,18 +1,207 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinhNhatt_</title>
 
-![Logo](https://ibb.co/ks9gJKXw)
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: monospace;
+        color: white;
+        background: black;
+        overflow: hidden;
+    }
 
-# Website 
+    /* ===== Hacking lines ===== */
+    .hacking-theme {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        pointer-events: none;
+    }
 
+    .hacking-theme div {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: rgba(255,255,255,0.7);
+        opacity: 0;
+        animation: hackMove 5s linear infinite;
+    }
 
----
+    @keyframes hackMove {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 0.5; }
+        100% { transform: translateY(100%); opacity: 0; }
+    }
 
-### 🔗 Connect With Me
+    .hacking-theme div:nth-child(odd) { animation-duration: 4s; }
+    .hacking-theme div:nth-child(even) { animation-duration: 6s; }
 
-[![YouTube](https://img.shields.io/badge/Youtube-MinhNhat-red?logo=Youtube)](https://www.youtube.com/@MinhhNhatt-0504)
-[![Website](https://img.shields.io/badge/Website-mussix.onrender.com-blue?logo=google-chrome)](https://mussix.onrender.com)
-[![Discord](https://img.shields.io/badge/Discord-Support%20Server-5865F2?style=for-the-badge&logo=discord)](https://discord.gg/P9yeTvwKjB)
+    /* ===== Matrix ===== */
+    canvas {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+    }
 
----
+    /* ===== Particle ===== */
+    .particle {
+        position: fixed;
+        width: 2px;
+        height: 2px;
+        background: rgba(255,255,255,0.6);
+        animation: floatUp linear infinite;
+        z-index: -1;
+    }
 
-[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Support](#-support)
+    @keyframes floatUp {
+        from { transform: translateY(100vh); opacity: 0; }
+        to { transform: translateY(-10vh); opacity: 1; }
+    }
+
+    /* ===== Center ===== */
+    .center-wrapper {
+        position: relative;
+        z-index: 10;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .center-content {
+        max-width: 900px;
+        width: 100%;
+        padding: 30px;
+        background: rgba(0,0,0,0.35);
+        backdrop-filter: blur(6px);
+        border-radius: 14px;
+    }
+
+    /* ===== Logo ===== */
+    .logo {
+        max-width: 180px;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    }
+
+    hr {
+        width: 60%;
+        opacity: 0.4;
+        margin: 20px auto;
+    }
+
+    a { text-decoration: none; }
+</style>
+</head>
+
+<body>
+
+<!-- Hacking background -->
+<div class="hacking-theme">
+    <div style="left:10%"></div>
+    <div style="left:20%"></div>
+    <div style="left:30%"></div>
+    <div style="left:40%"></div>
+    <div style="left:50%"></div>
+    <div style="left:60%"></div>
+    <div style="left:70%"></div>
+    <div style="left:80%"></div>
+    <div style="left:90%"></div>
+</div>
+
+<!-- Matrix -->
+<canvas id="matrix"></canvas>
+
+<!-- Content -->
+<div class="center-wrapper">
+    <div class="center-content">
+
+        <!-- LOGO BASE64 -->
+        <img class="logo"
+             src="https://cdn.discordapp.com/attachments/1407244638674485340/1448832422287380552/image.png?ex=693e0357&is=693cb1d7&hm=3f82606a1f0e3712ad4a7f1a9847039356041330095499027bd5f88bd0a56184&"
+             alt="Logo">
+
+        <h1>Pham Minh Nhat._.</h1>
+
+        <hr>
+
+        <h3>🔗 Connect With Me</h3>
+
+        <a href="https://www.youtube.com/@MinhhNhatt-0504">
+            <img src="https://img.shields.io/badge/Youtube-MinhNhat-red?logo=Youtube">
+        </a>
+
+        <a href="https://pmn.onrender.com/">
+            <img src="https://img.shields.io/badge/Website-mussix.onrender.com-blue?logo=google-chrome">
+        </a>
+
+        <a href="https://discord.gg/P9yeTvwKjB">
+            <img src="https://img.shields.io/badge/Discord-Support%20Server-5865F2?style=for-the-badge&logo=discord">
+        </a>
+
+        <a href="https://guns.lol/phamminhnhat__">
+            <img src="https://img.shields.io/badge/My%20Bio-pink?logo=google%20chrome">
+        </a>
+
+        <hr>
+        <!-- giữ nguyên badge của bạn ở đây -->
+
+    </div>
+</div>
+
+<script>
+/* ===== Matrix ===== */
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+const letters = "01#$@%&";
+const fontSize = 14;
+let columns = canvas.width / fontSize;
+let drops = Array(Math.floor(columns)).fill(1);
+
+function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.98)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+setInterval(drawMatrix, 50);
+
+/* ===== Particle ===== */
+for (let i = 0; i < 50; i++) {
+    const p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = 6 + Math.random() * 10 + "s";
+    p.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
