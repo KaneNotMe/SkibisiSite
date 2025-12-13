@@ -1,41 +1,104 @@
-
-
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MinhNhatt_</title>
 
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
 
-<div align="center">
+        /* Gradient động */
+        .animated-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                -45deg,
+                #00ff99,
+                #00ccff,
+                #7f00ff,
+                #00ff00
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+        }
 
-    <!-- Logo -->
-    <img src="https://cdn.discordapp.com/attachments/1407244638674485340/1448832422287380552/image.png?ex=693cb1d7&is=693b6057&hm=1badeb1314f4c8c96272c236982a201dfb36deec25d1c819a7b2ae093614e78c&">
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    <h1>Website</h1>
+        img {
+            max-width: 100%;
+        }
 
-    <!-- Badges -->
+        a {
+            text-decoration: none;
+        }
 
-    <hr>
+        hr {
+            width: 60%;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
 
-    <h3>🔗 Connect With Me</h3>
+    <!-- Background -->
+    <div class="animated-gradient"></div>
 
-    <a href="https://www.youtube.com/@MinhhNhatt-0504">
-        <img src="https://img.shields.io/badge/Youtube-MinhNhat-red?logo=Youtube" alt="YouTube">
-    </a>
+    <!-- Content -->
+    <div align="center">
 
-    <a href="https://pmn.onrender.com/">
-        <img src="https://img.shields.io/badge/Website-mussix.onrender.com-blue?logo=google-chrome" alt="Website">
-    </a>
+        <!-- Logo -->
+        <img src="https://cdn.discordapp.com/attachments/1407244638674485340/1448832422287380552/image.png">
 
-    <a href="https://discord.gg/P9yeTvwKjB">
-        <img src="https://img.shields.io/badge/Discord-Support%20Server-5865F2?style=for-the-badge&logo=discord" alt="Discord">
-    </a>
-<a href="https://guns.lol/phamminhnhat__">
-    <img src="https://img.shields.io/badge/My%20Bio-pink?logo=google%20chrome">
-    <hr>
+        <h1>Website</h1>
 
-    <p>
-        <a href="#-features">Features</a> •
-        <a href="#-installation">Installation</a> •
-        <a href="#-configuration">Configuration</a> •
-        <a href="
+        <hr>
+
+        <h3>🔗 Connect With Me</h3>
+
+        <a href="https://www.youtube.com/@MinhhNhatt-0504">
+            <img src="https://img.shields.io/badge/Youtube-MinhNhat-red?logo=Youtube">
+        </a>
+
+        <a href="https://pmn.onrender.com/">
+            <img src="https://img.shields.io/badge/Website-mussix.onrender.com-blue?logo=google-chrome">
+        </a>
+
+        <a href="https://discord.gg/P9yeTvwKjB">
+            <img src="https://img.shields.io/badge/Discord-Support%20Server-5865F2?style=for-the-badge&logo=discord">
+        </a>
+
+        <a href="https://guns.lol/phamminhnhat__">
+            <img src="https://img.shields.io/badge/My%20Bio-pink?logo=google%20chrome">
+        </a>
+
+        <hr>
+
+        <p>
+            <a href="#features">Features</a> •
+            <a href="#installation">Installation</a> •
+            <a href="#configuration">Configuration</a>
+        </p>
+
+    </div>
+
+</body>
+</html>
+
