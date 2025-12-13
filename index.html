@@ -6,6 +6,7 @@
 <title>MinhNhatt_</title>
 
 <style>
+    /* ===== Base ===== */
     body {
         margin: 0;
         min-height: 100vh;
@@ -14,16 +15,8 @@
         background: black;
         overflow: hidden;
     }
-.logo {
-    position: relative;
-    z-index: 20;
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 10px;
-    image-rendering: auto;
-}
 
-    /* ===== Hacking lines (black & white) ===== */
+    /* ===== Hacking lines ===== */
     .hacking-theme {
         position: fixed;
         inset: 0;
@@ -92,6 +85,16 @@
         border-radius: 14px;
     }
 
+    /* ===== Logo FIX ===== */
+    .logo {
+        position: relative;
+        z-index: 20;
+        max-width: 180px;
+        height: auto;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    }
+
     hr {
         width: 60%;
         opacity: 0.4;
@@ -125,7 +128,10 @@
 <div class="center-wrapper">
     <div class="center-content">
 
-        <img class="logo" src="https://cdn.discordapp.com/attachments/1407244638674485340/1448832422287380552/image.png" alt="Logo">
+        <!-- LOGO -->
+        <img class="logo"
+             src="https://cdn.discordapp.com/attachments/1407244638674485340/1448832422287380552/image.png"
+             alt="Logo">
 
         <h1>Website</h1>
 
@@ -155,7 +161,7 @@
 </div>
 
 <script>
-/* ===== Matrix Effect (white) ===== */
+/* ===== Matrix Effect ===== */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
