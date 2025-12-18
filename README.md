@@ -1,7 +1,7 @@
 
 <div align="center">
 
-![Logo](https://i.pinimg.com/originals/4d/98/86/4d98860449d00012a8eb751975fdd892.gif)
+![Logo](https://media.tenor.com/TxflfpxQNgcAAAAM/happy-dance.gif)
 ---
 *Diddyskibidi*
 
