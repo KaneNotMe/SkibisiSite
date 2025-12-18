@@ -1,7 +1,7 @@
 
 <div align="center">
 
-![Logo] (https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsLPX6fxhpLwZsZH4C3GaCVXt5KhBbAR4aEA&s)
+![Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsLPX6fxhpLwZsZH4C3GaCVXt5KhBbAR4aEA&s)
 ---
 *Diddyskibidi*
 
