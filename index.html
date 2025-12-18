@@ -291,11 +291,14 @@ document.querySelectorAll(".lang-switch button").forEach(btn => {
 const c = document.getElementById("matrix"), x = c.getContext("2d");
 function r(){c.width=innerWidth;c.height=innerHeight}
 r();addEventListener("resize",r);
-const l="01#$@%&",f=14,d=Array(Math.floor(c.width/f)).fill(1);
+const l="0%$kaneily*&1",f=14,d=Array(Math.floor(c.width/f)).fill(1);
 setInterval(()=>{
 x.fillStyle="rgba(0,0,0,.15)";
 x.fillRect(0,0,c.width,c.height);
-x.fillStyle="#fff";x.font=f+"px monospace";
+let gradient = x.createLinearGradient(0, 0, 0, c.height);
+gradient.addColorStop(0, "#00ff00"); 
+gradient.addColorStop(1, "#ffffff"); 
+x.fillStyle = gradient;;x.font=f+"px monospace";
 d.forEach((v,i)=>{x.fillText(l[Math.random()*l.length|0],i*f,v*f);d[i]=v*f>c.height&&Math.random()>.98?0:v+1})
 },50);
 
