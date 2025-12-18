@@ -46,7 +46,7 @@
 }
 
 /* ===== Base ===== */
- {
+body {
   margin: 0;
   min-height: 100vh;
   font-family: monospace;
@@ -99,6 +99,7 @@ canvas {
   from { transform: translateY(100vh); opacity: 0 }
   to { transform: translateY(-10vh); opacity: 1 }
 }
+
 /* ===== Center ===== */
 .center-wrapper {
   min-height: 100vh;
@@ -153,7 +154,7 @@ canvas {
 </style>
 </head>
 
-<>
+<body>
 
 <!-- Language Flags -->
 <div class="lang-switch">
@@ -166,7 +167,7 @@ canvas {
 
 <!-- MUSIC -->
 <audio id="bg-music" preload="auto" loop>
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="https://soundcloud.com/japan-group/struct-x-luar" type="audio/mpeg">
 </audio>
 
 <div class="music-control">
@@ -250,7 +251,7 @@ KaneNotMe._.
 </button>
 
 <audio id="bg-music" loop preload="auto">
-  <source src="https://youtu.be/9yqhwJ8Pd8w?si=I8_HgrKs3trJTN8y" type="audio/mpeg">
+  <source src="https://soundcloud.com/japan-group/struct-x-luar" type="audio/mpeg">
 </audio>
 
 <script>
@@ -304,7 +305,7 @@ let p=document.createElement("div");
 p.className="particle";
 p.style.left=Math.random()*100+"vw";
 p.style.animationDuration=6+Math.random()*10+"s";
-document..appendChild(p);
+document.body.appendChild(p);
 }
 
 /* ===== MUSIC LOGIC ===== */
@@ -331,5 +332,5 @@ enableBtn.addEventListener("click", async () => {
 });
 </script>
 
-</>
+</body>
 </html>
