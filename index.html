@@ -88,12 +88,11 @@ canvas {
 
 .particle {
   position: fixed;
-  background: none; /* Xóa nền trắng cũ */
-  font-size: 18px;  /* Chỉnh kích thước của emoji */
-  user-select: none;
-  pointer-events: none;
-  z-index: -1;
+  width: 2px;
+  height: 2px;
+  background: rgba(255,255,255,.6);
   animation: floatUp linear infinite;
+  z-index: -1;
 }
 
 @keyframes floatUp {
