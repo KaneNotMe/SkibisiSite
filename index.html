@@ -56,25 +56,48 @@
 }
 
 /* ===== Background effects ===== */
-<div class="space-bg"></div>
-.space-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -3;
-  background:
-    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
-    radial-gradient(1px 1px at 30% 80%, #fff, transparent),
-    radial-gradient(2px 2px at 70% 40%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 60%, #fff, transparent),
-    radial-gradient(2px 2px at 50% 50%, #fff, transparent);
-  background-size: 200px 200px;
-  animation: spaceMove 60s linear infinite;
+.hacking-theme, canvas, .particle {
   pointer-events: none;
 }
 
-@keyframes spaceMove {
-  from { background-position: 0 0 }
-  to   { background-position: 1000px 2000px }
+.hacking-theme {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+}
+
+.hacking-theme div {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: rgba(255,255,255,.6);
+  animation: hack 4s linear infinite;
+}
+
+@keyframes hack {
+  from { transform: translateY(-100%); opacity: 0 }
+  50% { opacity: .5 }
+  to { transform: translateY(100%); opacity: 0 }
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: rgba(255,255,255,.6);
+  animation: floatUp linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); opacity: 0 }
+  to { transform: translateY(-10vh); opacity: 1 }
 }
 /* ===== Center ===== */
 .center-wrapper {
