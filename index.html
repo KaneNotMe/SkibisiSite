@@ -186,7 +186,7 @@ canvas {
 <div class="center-wrapper">
 <div class="center-content fade" id="content">
 
-<img class="logo" src="https://camo.githubusercontent.com/72c585164f5c7e46b22152b97b37209cda1eff9c06e91d89f50b71c922d67078/68747470733a2f2f6d656469612e74656e6f722e636f6d2f5478666c667078514e6763414141414d2f68617070792d64616e63652e676966">
+<img class="logo" src="https://media.tenor.com/CFowpSoO7VsAAAAM/adad.gif">
 
 <p data-vi="Tham Gia Ngay Sivi Discord để được hỗ trợ!!"
    data-en="Join Sivi Discord to get support!!"
@@ -291,21 +291,15 @@ document.querySelectorAll(".lang-switch button").forEach(btn => {
 const c = document.getElementById("matrix"), x = c.getContext("2d");
 function r(){c.width=innerWidth;c.height=innerHeight}
 r();addEventListener("resize",r);
-const l="kaneily",f=14,d=Array(Math.floor(c.width/f)).fill(1);
+const l="01#$@%&",f=14,d=Array(Math.floor(c.width/f)).fill(1);
 setInterval(()=>{
 x.fillStyle="rgba(0,0,0,.15)";
 x.fillRect(0,0,c.width,c.height);
-let gradient = x.createLinearGradient(0, 0, 0, c.height);
-gradient.addColorStop(0, "#00ff00"); // Xanh lá ở đỉnh
-gradient.addColorStop(1, "#ffffff"); // Trắng ở đáy
-x.fillStyle = gradient;;x.font=f+"px monospace";
+x.fillStyle="#fff";x.font=f+"px monospace";
 d.forEach((v,i)=>{x.fillText(l[Math.random()*l.length|0],i*f,v*f);d[i]=v*f>c.height&&Math.random()>.98?0:v+1})
 },50);
 
 /* ===== Particles ===== */
-/* ... (Các đoạn code khác như Lang Switch, Matrix giữ nguyên) ... */
-
-/* ===== Particles (Dán đoạn này vào đây) ===== */
 for(let i=0;i<50;i++){
 let p=document.createElement("div");
 p.className="particle";
@@ -336,7 +330,7 @@ enableBtn.addEventListener("click", async () => {
     alert("Trình duyệt chặn phát nhạc, hãy bấm lại!");
   }
 });
-<script>
+</script>
 
 </body>
 </html>
