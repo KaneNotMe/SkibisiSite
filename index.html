@@ -88,11 +88,12 @@ canvas {
 
 .particle {
   position: fixed;
-  width: 2px;
-  height: 2px;
-  background: rgba(255,255,255,.6);
-  animation: floatUp linear infinite;
+  background: none; /* Xóa nền trắng cũ */
+  font-size: 18px;  /* Chỉnh kích thước của emoji */
+  user-select: none;
+  pointer-events: none;
   z-index: -1;
+  animation: floatUp linear infinite;
 }
 
 @keyframes floatUp {
@@ -333,6 +334,23 @@ enableBtn.addEventListener("click", async () => {
     alert("Trình duyệt chặn phát nhạc, hãy bấm lại!");
   }
 });
+<script>
+/* ... (Các đoạn code khác như Lang Switch, Matrix giữ nguyên) ... */
+
+/* ===== Particles (Dán đoạn này vào đây) ===== */
+for(let i=0; i<50; i++){
+  let p = document.createElement("div");
+  p.className = "particle";
+  p.innerHTML = "⭐"; // Bạn có thể đổi ngôi sao thành bất kỳ icon nào
+  p.style.left = Math.random() * 100 + "vw";
+  // Tốc độ bay ngẫu nhiên
+  p.style.animationDuration = 6 + Math.random() * 10 + "s";
+  // Kích thước ngẫu nhiên cho tự nhiên
+  p.style.fontSize = (Math.random() * 15 + 10) + "px"; 
+  document.body.appendChild(p);
+}
+
+/* ... (Đoạn Music Logic bên dưới giữ nguyên) ... */
 </script>
 
 </body>
